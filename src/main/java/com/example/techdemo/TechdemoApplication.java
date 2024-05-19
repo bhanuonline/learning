@@ -10,7 +10,7 @@ public class TechdemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TechdemoApplication.class, args);
-		System.out.println(Calendar.getInstance().getTime());
+		
 	}
 
 }
