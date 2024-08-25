@@ -1,0 +1,28 @@
+Deep Copy: Creates a new instance of the object along with copies of all objects referenced by the original object,
+           -creating a completely independent copy of an object
+ensuring no shared references between the original and copied objects.
+How to do that ?
+    Using Copy Constructors
+    Using clone() Method
+    Using Serialization
+
+
+Shallow Copy
+A shallow copy creates a new object that references the same underlying objects as the original object.
+Only the references (memory addresses) of member objects are copied, not the actual values within those objects.
+Any changes made to the member objects of the copy will also be reflected in the original object, and vice versa, since they both point to the same data
+
+Deep Copy
+A deep copy creates a completely independent new object with its own copies of all member objects.
+This ensures changes made to the copy's member objects won't affect the original object, and vice versa.
+Implementing deep copying can be more complex but provides greater isolation and data integrity.
+
+Serialization :Serialization involves converting an object into a byte stream, which can then be deserialized back into a copy of the original object.
+ObjectOutputStream , ObjectInputStream
+
+map: Changes each item in the stream using a given function, creating a new stream with the changed items.
+flatMap: Turns each item into a stream, then combines all those streams into one single stream
+anyMatch:The anyMatch method returns true if at least one element in the stream matches the given predicate. If no elements match it returns false
+anyMatch: Returns true as soon as it finds an element that matches the predicate. It stops processing the rest of the stream.
+allMatch: Returns false as soon as it finds an element that does not match the predicate. It stops processing the rest of the stream.
+noneMatch: Returns false as soon as it finds an element that matches the predicate. It stops processing the rest of the stream

@@ -1,0 +1,17 @@
+deep Cloning :
+1 : Cloning Products and Catalog Items
+Product Variants ,Catalog Synchronization
+2:Order Management-> Order Cloning ,Cart Copying
+3: Promotions and Rules -> creating new Promotion Templates
+Product Configuration
+
+Shallow Copy
+Cart and Addresses
+
+ItemModel
+├── AbstractOrderModel
+│   ├── CartModel
+│   └── OrderModel
+└── AbstractOrderEntryModel
+    ├── CartEntryModel
+    └── OrderEntryModel

@@ -1,0 +1,4 @@
+1: Predicate : reducing code lines and manage conditions in a better way
+2: Function interface is useful for various transformations and mappings
+3: The primary use of Consumer is for operations that have side effects, such as printing, modifying objects, or updating values,Logging,operations that do not require a return value but need to process input data
+What is lamda : A lambda expression in Java is a concise way to represent an anonymous function that can be passed around as a parameter, returned as a value, or assigned to a variable
