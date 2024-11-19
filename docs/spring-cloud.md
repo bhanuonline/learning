@@ -79,15 +79,14 @@ Check Processes
     netstat -tuln | grep 2181  # For ZooKeeper (default port)
 
 Useful command :
-    bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic kafka_learning_topic --partitions 3 --replication-factor 1
-    bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
-    bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic kafka_learning_topic
-    bin/kafka-console-producer.sh --broker-list localhost:9092 --topic kafka_learning_topic
-    bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_learning_topic --from-beginning
-    bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_learning_topic --from-beginning --group my-group
-    bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_learning_topic --from-beginning --group my-group --property print.key=true --property key.separator=,
-    
-    
+*     bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic kafka_learning_topic --partitions 3 --replication-factor 1
+*     bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+*     bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic kafka_learning_topic
+*     bin/kafka-console-producer.sh --broker-list localhost:9092 --topic kafka_learning_topic
+*     bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_learning_topic --from-beginning
+*     bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_learning_topic --from-beginning --group my-group
+*     bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_learning_topic --from-beginning --group my-group --property print.key=true --property key.separator=,
+
 
 
 
