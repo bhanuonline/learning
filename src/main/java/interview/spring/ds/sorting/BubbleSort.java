@@ -28,6 +28,7 @@ public class BubbleSort {
         // Print the sorted array
         for (int i = 0; i < n; i++) {
             System.out.println(arr[i]); // Output each element of the sorted array
+
         }
     }
 }
