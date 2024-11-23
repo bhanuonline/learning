@@ -9,6 +9,8 @@ public class BubbleSort {
         // Outer loop controls the number of passes required (n-1 passes for n elements)
         for (int i = 0; i < n - 1; i++) {
             boolean swapped = false; // Track if any elements were swapped during this pass
+            //Without the swapped flag, the algorithm would always perform all n−1 passes, even if the array is sorted early
+            //ex {1,2,3,4,5}; After the first pass, swapped remains false, and the outer loop breaks immediately, saving unnecessary iterations
 
             // Inner loop performs comparisons and swaps, with decreasing range for optimization
             for (int j = 0; j < n - 1 - i; j++) {
