@@ -1,4 +1,4 @@
-package interview.spring.ds.sorting;
+package interview.sorting;
 
 public class BubbleSort {
     public static void main(String[] args) {
