@@ -1,4 +1,4 @@
-package interview.spring.ds.sorting;
+package interview.sorting;
 
 public class SelectionSortExample {
 
