@@ -260,7 +260,7 @@ A **Dockerfile** is a text-based script that provides the instruction set on how
 
 containers are isolated `processes` for each of your app's components. Each component - the frontend `React app, the Python API engine, and the database` - runs in its own `isolated environment`, completely isolated from everything else on your machine.
 
-**Containers are:**
+**Containers are:** Docker container is a running instance of an image. You can use Command Line Interface (CLI) commands to run, start, stop, move, or delete a container. You can also provide configuration for the network and environment variables. Docker container is an isolated and secure application platform, but it can share and access to resources running in a different host or container.
 
 * Self-contained. Each container has everything it needs to function with no reliance on any pre-installed dependencies on the host machine.
 * Isolated. Since containers are run in isolation, they have minimal influence on the host and other containers, increasing the security of your applications.
@@ -277,6 +277,7 @@ A container is simply an isolated process with all of the files it needs to run.
 Seeing a container is an isolated process, where does it get its files and configuration? How do you share those environments?
 That's where container images come in. A container image is a standardized package that includes all of the files, binaries, libraries, and configurations to run a container.
 
+Ex : docker run hello-world  
 **There are two important principles of images:**
 
 Images are immutable. Once an image is created, it can't be modified. You can only make a new image or add changes on top of it.
@@ -301,4 +302,65 @@ A registry is a centralized location that stores and manages container images, w
 
 **What is Docker Compose?**
 
-**Building images**
+# Building images
+
+**Understanding the image layers**
+container images are composed of layers. And each of these layers, once created, are immutable. But, what does that actually mean? And how are those layers used to create the filesystem a container can use?
+
+**Dockerfile**
+A Dockerfile is a script containing instructions to build a Docker image. The Dockerfile defines the environment that your application will run in, including the operating system, libraries, dependencies, application code, and commands to run the application
+Each instruction in a Dockerfile creates a layer in the image, and Docker builds these layers in the order they appear.
+A Dockerfile is a text document that contains commands that are used to assemble an image. We can use any command that call on the command line. Docker builds images automatically by reading the instructions from the Dockerfile.
+
+The docker build command is used to build an image from the Dockerfile. You can use the -f flag with docker build to point to a Dockerfile anywhere in your file system.
+ex : docker build -f /path/to/a/Dockerfile .
+
+The instructions are not case-sensitive but you must follow conventions which recommend to use uppercase.
+A statement begin with # treated as a comment
+* FROM :The FROM instruction sets the base image for your image
+* LABEL We can add labels to an image to organize images of our project LABEL vendorl = "JavaTpoint"
+* WORKDIR :The WORKDIR instruction sets the working directory inside the containe
+   The WORKDIR is used to set the working directory for any RUN, CMD and COPY instruction that follows it in the Dockerfile. If work directory does not exist, it will be created by default.
+   We can use WORKDIR multiple times in a Dockerfile.
+
+* COPY The COPY instruction copies files or directories from the host machine to the container.
+  The source path must be inside the context of the build. We cannot COPY ../something /something because the first step of a docker build is to send the context directory (and subdirectories) to the docker daemon
+
+* RUN :The RUN instruction is used to execute commands inside the image. For example, installing packages or dependencies
+* EXPOSE : The EXPOSE instruction informs Docker that the container will listen on a specific network port at runtime.
+* CMD : The CMD instruction defines the default command that will be executed when the container is run. You can only have one CMD in a Dockerfile.This is used to execute application by the image. We should use CMD always in the following form
+  
+   CMD ["executable", "param1", "param2"?]
+   This is preferred way to use CMD. There can be only one CMD in a Dockerfile. If we use more than one CMD, only last one will execute.
+
+* ENTRYPOINT
+* ENV : The ENV instruction sets environment variables in the container. ex ENV APP_ENV=production
+* VOLUME : The VOLUME instruction creates a mount point and allows data to persist even after the container is stopped. ex  VOLUME ["/data"]
+* ARG : The ARG instruction defines build-time variables that can be passed when building the image. ex ARG VERSION=1.0
+
+
+**Use Full command**
+* docker build -t image-name docker-file-location  [ -t : it is used to tag Docker image with the provided name.]
+* docker run -d image-name  [-d : It is used to create a daemon process.]
+* docker images  
+* docker ps -l  [-l : it is used to show latest available container.]
+* docker ps -a  [-a : It is used to show all available containers.]
+* docker stop container_id  
+* docker rmi image-name  Delete an image
+* docker rmi $(docker images -q)  [Delete all images]
+* docker rmi -r $(docker images -q)  [Delete all images forcefully ,-r : It is used to delete image forcefully.]
+*  docker rm $(docker ps -a -q)  [Delete all containers]
+* docker exec -it container-id bash  [Enter into Docker container]
+
+Docker                                                                                    Kubernetes
+
+      Docker is developed by Docker Inc.                                                        Kubernetes is developed by Google.
+      It was first released in 2013.                                                            It was first released in 2014.
+      It is a container based technology used to create isolated environment for applications.  It is an infrastructure for managing multiple containers.
+      It allows us to use third-party tools like ELK for logging and monitoring.                It allows us to use in-built tools for logging and monitoring.
+      Its public cloud service provider is only Azure.                                          Its public cloud service providers are Google, Azure, and AWS.
+      It is less customizable.                                                                  It is highly customizable.
+      Its container limit is 95000.                                                             Its container limit is 300000.
+      It is easy to install.                                                                    It is complex to install.
+      It cannot do auto-scaling.                                                                It can do auto-scaling.
+      It does not provide any dashboard.                                                        It provides a Web UI dashboard.
