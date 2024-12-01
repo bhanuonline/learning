@@ -1,1 +1,0 @@
-netstat -an | grep LISTEN : to get all the listining port
