@@ -1,0 +1,2 @@
+**HttpPost :**The HttpPost class in Apache HttpClient is used to send HTTP POST requests with a body payload, typically for submitting data or interacting with REST APIs.
+**RedirectAttributes** is a powerful tool in Spring MVC that enhances redirect handling by providing mechanisms for passing data either as URL parameters or temporary flash attributes.
