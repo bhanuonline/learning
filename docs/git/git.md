@@ -108,5 +108,13 @@ git remote -v : To see the URL of the origin remote repository
 git remote add origin https://github.com/username/repo.git : add a remote a url
 git fetch origin : To fetch updates from the remote repository 
 
+**Check File Status**
+
+git ls-files -v | grep docs/git/git.md
+
+    H indicates the file is up-to-date.
+    S indicates the file is staged.
+    No entry means the file might not be tracked.
+
         
             
