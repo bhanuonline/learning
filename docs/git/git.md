@@ -116,5 +116,18 @@ git ls-files -v | grep docs/git/git.md
     S indicates the file is staged.
     No entry means the file might not be tracked.
 
-        
-            
+**How git revert working ?**
+
+git revert does not remove the content permanently. It creates a new commit that reverses the changes made by the specified commit(s). The original commit remains in the history, but its effects are undone
+
+Example
+1. You add a line Hello World! to a file and commit it.
+2. If you revert this commit, Git creates a new commit that removes the line Hello World!.
+3. However, the original commit (where the line was added) is still present in the repository history.
+
+How to revert back to content
+
+* Method 1: Revert the Revert git revert <revert-commit-hash> : git revert on the revert commit's hash
+* Method 2: Cherry-Pick the Original Commit [git cherry-pick <original-commit-hash>]
+* Method 3: Manually Add the Content Back Then Stage and Commit the File
+* Method 4: Reset the File to the State of the Original Commit [git checkout <commit-hash> -- <file-path ] Then Stage and Commit the File
