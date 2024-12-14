@@ -102,6 +102,9 @@ Keep a clean and straight history without merge commits
 
 
 
+git remote -v : To see the URL of the origin remote repository
+git remote add origin https://github.com/username/repo.git : add a remote a url
+git fetch origin : To fetch updates from the remote repository 
 
         
             
