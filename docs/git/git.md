@@ -100,7 +100,9 @@ Keep a clean and straight history without merge commits
     main:    A---B---C-------M
     feature:          \----D---E
 
+**What is origin ?**
 
+origin is the default name given to the remote repository when you clone a repository or add a remote. It acts as a shorthand alias for the URL of the remote repository and is commonly used to interact with the central repository.
 
 git remote -v : To see the URL of the origin remote repository
 git remote add origin https://github.com/username/repo.git : add a remote a url
