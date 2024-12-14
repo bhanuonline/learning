@@ -1,4 +1,4 @@
-**Kubernetes**
+git **Kubernetes**
 Kubernetes, also known as K8s, is an open source system for automating deployment, scaling, and management of containerized applications
 A Kubernetes cluster is a group of nodes that run containerized applications and are managed by Kubernetes
 kubectl tool is the most common way to interact with a Kubernetes cluster.
